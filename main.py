@@ -36,6 +36,13 @@ tk_image = ImageTk.PhotoImage(image_to_draw_on)
 canvas_image = canvas.create_image(0, 0, anchor=NW, image=tk_image)
 canvas.pack()
 
+
+button = Button(None)
+keys = button.keys()
+
+for key in keys:
+    print(key)
+
 ###############################################################################
 #                               SAVE IMAGE
 ###############################################################################
@@ -49,9 +56,11 @@ def save_image():
 ###############################################################################
 #                               DECLARE FIELDS
 ###############################################################################
-
-save_button = Button(root, text="    Save image    ", command=save_image, highlightbackground='yellow', font=('Helvetica', '20'))
+save_button = Button(root, text="Save image", command=save_image, font=('Helvetica', '20'))
+save_button.configure(highlightbackground='yellow')
 save_button.place(x=800, y=50)
+
+
 
 main_bet = Entry(root)
 main_bet.place(x=400, y=210)
@@ -111,17 +120,8 @@ def on_key(event):
 
     bet_description_text = bet_description.get()
 
-    Vowels = ["A", "E", "O", "U"]
-    for x in range(0, len(bet_description_text)):
-        if bet_description_text[x] in Vowels:
-            draw.text((55 + (x * 23) - 1, 265), bet_description_text[x], fill=(131, 142, 148), font=BetDescription2)
-        elif bet_description_text[x] == "I" or bet_description_text[x] == "i":
-            draw.text((55 + (x * 23)+5, 265), bet_description_text[x], fill=(131, 142, 148), font=BetDescription2)
-        elif bet_description_text[x] == " ":
-            draw.text((55 + (x * 23) - 7, 265), bet_description_text[x], fill=(131, 142, 148), font=BetDescription2)
-        else:
-            draw.text((55 + (x * 23), 265), bet_description_text[x], fill=(131, 142, 148), font=BetDescription2)
-
+    draw.text((55 + (23), 265), bet_description_text, fill=(131, 142, 148), font=BetDescription2)
+        
     date_placed_text = date_placed.get()
 
     for x in range(0, len(date_placed_text)):
@@ -141,3 +141,18 @@ root.bind("<Key>", on_key, add='+')
 
 on_key(None)
 root.mainloop()
+
+'''
+    for x in range(0, len(bet_description_text)):
+        if bet_description_text[x] in Vowels:
+            draw.text((55 + (x * 23) - 1, 265), bet_description_text[x], fill=(131, 142, 148), font=BetDescription2)
+        elif bet_description_text[x] == "I" or bet_description_text[x] == "i":
+            draw.text((55 + (x * 23)+5, 265), bet_description_text[x], fill=(131, 142, 148), font=BetDescription2)
+        elif bet_description_text[x] == "W":
+            draw.text((55 + (x * 23)-5, 265), bet_description_text[x], fill=(131, 142, 148), font=BetDescription2)
+            filler = filler + 3
+        elif bet_description_text[x] == " ":
+            draw.text((55 + (x * 23) - 7, 265), bet_description_text[x], fill=(131, 142, 148), font=BetDescription2)
+        else:
+            draw.text((55 + (x * 23), 265), bet_description_text[x], fill=(131, 142, 148), font=BetDescription2)
+'''
