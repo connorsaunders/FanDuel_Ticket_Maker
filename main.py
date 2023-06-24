@@ -120,7 +120,7 @@ def on_key(event):
 
     bet_description_text = bet_description.get()
 
-    draw.text((55 + (23), 265), bet_description_text, fill=(131, 142, 148), font=BetDescription2)
+    draw.text((55, 265), bet_description_text, fill=(131, 142, 148), font=BetDescription2)
         
     date_placed_text = date_placed.get()
 
