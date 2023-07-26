@@ -119,9 +119,22 @@ def on_key(event):
             draw.text((190 + (x * 21), 615), bet_id_text[x], fill=(131, 142, 148), font=ProximaNovaThin)
 
     bet_description_text = bet_description.get()
+    
+    Vowels = ["A", "E", "O", "U"]
+    x_coordinate = 55
+    space = 5  # for example, if you want 5 units of space between each letter
+    for x in range(0, len(bet_description_text)):
+        w, h = draw.textsize(bet_description_text[x], font=BetDescription2)
+        if bet_description_text[x] in Vowels:
+            draw.text((x_coordinate - 1, 265), bet_description_text[x], fill=(131, 142, 148), font=BetDescription2)
+        elif bet_description_text[x] == " ":
+            draw.text((x_coordinate - 7, 265), bet_description_text[x], fill=(131, 142, 148), font=BetDescription2)
+        else:
+            draw.text((x_coordinate, 265), bet_description_text[x], fill=(131, 142, 148), font=BetDescription2)
+        x_coordinate += w + space
 
-    draw.text((55, 265), bet_description_text, fill=(131, 142, 148), font=BetDescription2)
-        
+
+    ############################################################################################################################    
     date_placed_text = date_placed.get()
 
     for x in range(0, len(date_placed_text)):
