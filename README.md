@@ -1,5 +1,5 @@
-# FanDuel Ticket Maker
-This script is a Python-based image editor that allows you to customize and generate your own FanDuel ticket (single bet ticket).
+# FanDuel Ticket Maker💰🎰
+This script is a Python-based image editor that allows you to customize and generate your own FanDuel ticket (single bet winning ticket).
 
 ![Image Description](Bet_Slip.png)
 
